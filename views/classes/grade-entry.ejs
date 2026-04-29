@@ -1,0 +1,61 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/table.css">
+<link rel="stylesheet" href="/css/forms.css">
+<style>
+    /* Style tùy chỉnh để ô input nằm gọn trong bảng */
+    .data-table .form-control {
+        margin: 0;
+    }
+    .data-table .form-control input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+    }
+</style>
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (classInfo) { %>
+            <h1>Nhập điểm: Lớp <%= classInfo.name %></h1>
+            <hr>
+            
+            <form action="/admin/classes/<%= classInfo.id %>/grades" method="POST">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Tên Sinh viên</th>
+                            <th>Mã Sinh viên</th>
+                            <th style="width: 20%;">Điểm số</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% gradeData.forEach(data => { %>
+                            <tr>
+                                <td><%= data.studentInfo.name %></td>
+                                <td><%= data.studentInfo.studentCode %></td>
+                                <td>
+                                    <div class="form-control">
+                                        <input 
+                                            type="number" 
+                                            name="grades[<%= data.studentInfo.id %>][score]"
+                                            step="0.1" 
+                                            min="0" 
+                                            max="10"
+                                            value="<%= data.gradeRecord.score %>"
+                                        >
+                                    </div>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                <br>
+                <button type="submit" class="btn">Lưu Bảng điểm</button>
+            </form>
+        <% } else { %>
+            <h1>Không tìm thấy thông tin lớp học.</h1>
+        <% } %>
+    </main>
+<%- include('../includes/end.ejs') %>

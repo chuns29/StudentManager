@@ -1,0 +1,40 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <h1>Tổng kết Điểm danh: Lớp <%= classInfo.name %></h1>
+        <hr>
+        <table class="data-table attendance-table">
+            <thead>
+                <tr>
+                    <th>Tên Sinh viên</th>
+                    <% for(let i = 1; i <= 10; i++) { %>
+                        <th>Buổi <%= i %></th>
+                    <% } %>
+                </tr>
+            </thead>
+            <tbody>
+                <% attendanceData.forEach(data => { %>
+                    <tr>
+                        <td><%= data.studentInfo.name %></td>
+                        <% for(let i = 0; i < 10; i++) { %>
+                            <td>
+                                <% if (data.attendanceRecord.sessions[i] === true) { %>
+                                    <span style="color: green; font-weight: bold;">V</span>
+                                <% } else if (data.attendanceRecord.sessions[i] === false) { %>
+                                    <span style="color: red; font-weight: bold;">X</span>
+                                <% } else { %>
+                                    <span>-</span>
+                                <% } %>
+                            </td>
+                        <% } %>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <br>
+        <a href="/admin/classes/<%= classInfo.id %>/attendance" class="btn">Đi đến trang Điểm danh</a>
+    </main>
+<%- include('../includes/end.ejs') %>

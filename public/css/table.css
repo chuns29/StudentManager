@@ -1,0 +1,44 @@
+/* public/css/table.css */
+
+.data-table {
+    width: 90%; /* Hoặc 100% nếu bạn muốn bảng chiếm toàn bộ chiều rộng */
+    margin: 2rem auto; /* Căn giữa bảng và tạo khoảng cách */
+    border-collapse: collapse; /* Gộp các đường viền của ô lại cho đẹp */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px; /* Bo góc cho bảng */
+    overflow: hidden; /* Đảm bảo bo góc hoạt động với a:first-child và a:last-child */
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd; /* Đường viền mỏng cho các ô */
+    padding: 12px 15px; /* Khoảng đệm bên trong ô */
+    text-align: left; /* Căn chữ về bên trái */
+}
+
+.data-table th {
+    background-color: #00695c; /* Màu nền cho hàng header (màu xanh bạn đang dùng) */
+    color: white; /* Chữ màu trắng cho header */
+    font-weight: bold;
+    text-transform: uppercase; /* Viết hoa chữ header */
+}
+
+/* Tạo hiệu ứng sọc vằn cho các hàng (tùy chọn) */
+.data-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f1f1f1; /* Màu nền khi di chuột qua một hàng */
+}
+
+/* CSS cho các nút hành động trong bảng */
+.data-table .actions {
+    text-align: center; /* Căn giữa các nút */
+}
+
+.data-table .actions .btn {
+    margin: 0 5px; /* Khoảng cách giữa các nút */
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}

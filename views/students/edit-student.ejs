@@ -1,0 +1,70 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/student.css"> 
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <form 
+            class="student-form" 
+            action="<%= editing ? '/admin/students/edit' : '/admin/add-student' %>" 
+            method="POST"
+        >
+            <% if (editing) { %>
+                <h1>Chỉnh sửa Thông tin Sinh viên: <%= student.name %></h1>
+            <% } else { %>
+                <h1>Thêm Sinh viên Mới</h1>
+            <% } %>
+            <hr>
+            <div class="form-control">
+                <label for="name">Tên Sinh viên</label>
+                <input 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    value="<%= editing ? student.name : '' %>"
+                >
+            </div>
+
+            <div class="form-control">
+                <label for="studentCode">Mã Sinh viên</label>
+                <input 
+                    type="text" 
+                    name="studentCode" 
+                    id="studentCode" 
+                    value="<%= editing ? student.studentCode : '' %>"
+                >
+            </div>
+
+            <div class="form-control">
+                <label for="dateOfBirth">Ngày sinh</label>
+                <input 
+                    type="date" 
+                    name="dateOfBirth" 
+                    id="dateOfBirth" 
+                    value="<%= editing ? student.dateOfBirth : '' %>"
+                >
+            </div>
+
+            <div class="form-control">
+                <label for="major">Chuyên ngành</label>
+                <input 
+                    type="text" 
+                    name="major" 
+                    id="major" 
+                    value="<%= editing ? student.major : '' %>"
+                >
+            </div>
+            
+            <% if (editing) { %>
+                <input type="hidden" value="<%= student.id %>" name="studentId">
+            <% } %>
+
+            <button class="btn" type="submit">
+                <%= editing ? 'Cập nhật Sinh viên' : 'Thêm Sinh viên' %>
+            </button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>

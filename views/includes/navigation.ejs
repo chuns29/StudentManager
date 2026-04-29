@@ -1,0 +1,56 @@
+<header class="main-header">
+  <nav class="main-header__nav">
+    <ul class="main-header__item-list">
+      
+      <li class="main-header__item">
+        <a class="<%= path === '/admin/classes' ? 'active' : '' %>" href="/admin/classes">
+          Danh sách Lớp
+        </a>
+      </li>
+
+      <% if (locals.isAuthenticated && userRole === 'admin') { %>
+        <li class="main-header__item">
+          <a class="<%= path === '/admin/add-class' ? 'active' : '' %>" href="/admin/add-class">
+            Thêm Lớp
+          </a>
+        </li>
+      <% } %>
+      
+      <% if (locals.isAuthenticated && userRole === 'admin') { %>
+        <li class="main-header__item">
+          <a class="<%= path === '/admin/students' ? 'active' : '' %>" href="/admin/students">
+            Danh sách Sinh viên
+          </a>
+        </li>
+
+        <li class="main-header__item">
+          <a class="<%= path === '/admin/add-student' ? 'active' : '' %>" href="/admin/add-student">
+            Thêm Sinh viên
+          </a>
+        </li>
+      <% } %>
+      
+        <% if (isAuthenticated) { %>
+        <% if (userRole === 'admin') { %>
+          <li class="main-header__item">
+            <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">
+              Đăng ký
+            </a>
+          </li>
+        <% } %>
+
+        <li class="main-header__item">
+            <form action="/logout" method="POST">
+                <button type="submit" class="btn">Logout</button>
+            </form>
+        </li>
+      <% } else { %>
+        <li class="main-header__item">
+          <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">
+            Login
+          </a>
+        </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>

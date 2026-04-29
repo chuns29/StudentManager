@@ -1,0 +1,93 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/class.css">
+<link rel="stylesheet" href="/css/student.css">
+<link rel="stylesheet" href="/css/table.css"> </head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main class="main-content">
+        <% if (classInfo) { %>
+            <header class="page-header">
+                <h1>Chi tiết Lớp học: <%= classInfo.name %></h1>
+                <p><strong>Giảng viên :</strong> <%= classInfo.teacherName %></p>
+            </header>
+            <hr>
+            <% if (userRole === 'admin') { %>
+            <section class="form-container class-form">
+                <h2>Đăng ký Sinh viên vào Lớp</h2>
+                <% if (availableStudents && availableStudents.length > 0) { %>
+                    <form action="/admin/classes/add-student" method="POST">
+                        <input type="hidden" name="classId" value="<%= classInfo.id %>">
+
+                        <div class="form-control">
+                            <label for="student">Chọn sinh viên để đăng ký:</label>
+                            <select name="studentId" id="student">
+                                <% availableStudents.forEach(student => { %>
+                                    <option value="<%= student.id %>">
+                                        <%= student.name %> (<%= student.studentCode %>)
+                                    </option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <button class="btn" type="submit">Đăng ký vào lớp</button>
+                    </form>
+                <% } else { %>
+                    <p>Không có sinh viên nào có sẵn để đăng ký vào lớp này (hoặc tất cả sinh viên đã được đăng ký).</p>
+                <% } %>
+            </section>
+            <hr>
+            <% } %>
+
+
+            <section class="list-container">
+                <h2>Danh sách Sinh viên đã Đăng ký (<%= studentsInClass.length %>)</h2>
+                <a href="/admin/classes/<%= classInfo.id %>/grades" class="btn">Nhập Điểm</a>
+                <a href="/admin/classes/<%= classInfo.id %>/attendance" class="btn">Điểm danh Lớp học</a>
+                <a href="/admin/classes/<%= classInfo.id %>/attendance-summary" class="btn">Xem Tổng kết Điểm danh</a>
+                <% if (studentsInClass.length > 0) { %>
+                <table class="data-table">
+                <thead>
+                <tr>
+                    <th>Tên Sinh viên</th>
+                    <th>Mã Sinh viên</th>
+                    <th>Chuyên ngành</th>
+                    <th>Vắng</th>
+                    <th>Điểm số</th>
+                    <% if (userRole === 'admin') { %>
+                        <th>Hành động</th> <% } %>
+                </tr>
+            </thead>
+            <tbody>
+                <% studentsInClass.forEach(student => { %>
+                    <tr>
+                        <td><%= student.name %></td>
+                        <td><%= student.studentCode %></td>
+                        <td><%= student.major %></td>
+                        <td><%= student.absences %></td>
+                        <td><%= student.score %></td>    
+
+                        <% if (userRole === 'admin') { %>
+                            <td class="actions">
+                                <form action="/admin/classes/remove-student" method="POST">
+                                    <input type="hidden" name="classId" value="<%= classInfo.id %>">
+                                    <input type="hidden" name="studentId" value="<%= student.id %>">
+                                    <button type="submit" class="btn danger">Xóa khỏi lớp</button>
+                                </form>
+                            </td>
+                        <% } %>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>Lớp học này hiện chưa có sinh viên nào đăng ký.</p>
+    <% } %>
+</section>
+
+        <% } else { %>
+            <h1>Không tìm thấy thông tin lớp học.</h1>
+        <% } %>
+    </main>
+
+<%- include('../includes/end.ejs') %>

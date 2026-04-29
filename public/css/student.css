@@ -1,0 +1,37 @@
+/* Dùng để định dạng form thêm/sửa sinh viên */
+.student-form {
+    width: 25rem;
+    max-width: 90%;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Dùng để định dạng mỗi "thẻ" sinh viên trong danh sách */
+.student-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem; /* Thêm margin để các thẻ không dính vào nhau */
+}
+
+/* Định dạng cho tên sinh viên bên trong thẻ */
+.student__name {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Định dạng cho mã sinh viên */
+.student__code {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Định dạng cho các thông tin phụ như lớp, chuyên ngành */
+.student__details {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+}

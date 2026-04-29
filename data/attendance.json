@@ -1,0 +1,354 @@
+[
+  {
+    "classId": "0.45975118771052226",
+    "studentId": "0.8119363889981455",
+    "sessions": [
+      true,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.45975118771052226",
+    "studentId": "0.9815773615084187",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.45975118771052226",
+    "studentId": "0.4352267334289487",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.45975118771052226",
+    "studentId": "0.26890358186424923",
+    "sessions": [
+      false,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.45975118771052226",
+    "studentId": "0.5727549496871202",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.45975118771052226",
+    "studentId": "0.8088887711825512",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.45975118771052226",
+    "studentId": "0.9077248373629958",
+    "sessions": [
+      false,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.6189250234713137",
+    "studentId": "0.8119363889981455",
+    "sessions": [
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.6189250234713137",
+    "studentId": "0.9815773615084187",
+    "sessions": [
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.6189250234713137",
+    "studentId": "0.4352267334289487",
+    "sessions": [
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.6189250234713137",
+    "studentId": "0.26890358186424923",
+    "sessions": [
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.6189250234713137",
+    "studentId": "0.5727549496871202",
+    "sessions": [
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.6189250234713137",
+    "studentId": "0.38068143313601166",
+    "sessions": [
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.6189250234713137",
+    "studentId": "0.10695557658513022",
+    "sessions": [
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.19023375515596963",
+    "studentId": "0.8119363889981455",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.19023375515596963",
+    "studentId": "0.9815773615084187",
+    "sessions": [
+      true,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.19023375515596963",
+    "studentId": "0.4352267334289487",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.19023375515596963",
+    "studentId": "0.26890358186424923",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.19023375515596963",
+    "studentId": "0.38068143313601166",
+    "sessions": [
+      false,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.19023375515596963",
+    "studentId": "0.10695557658513022",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.19023375515596963",
+    "studentId": "0.011936700765741604",
+    "sessions": [
+      true,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "classId": "0.19023375515596963",
+    "studentId": "0.27497534208462904",
+    "sessions": [
+      true,
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
+]

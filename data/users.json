@@ -1,0 +1,30 @@
+[
+  {
+    "id": "0.5241778017259939",
+    "email": "admin@gmail.com",
+    "password": "$2b$12$yNKnsgLPBmHyE/fVLlH3V.K1F6fhXay08IuKb.RkE8XKXFgdsyuoq",
+    "role": "admin",
+    "name": "Quản trị viên"
+  },
+  {
+    "id": "0.5241778017252003",
+    "email": "anh@gmail.com",
+    "password": "$2b$12$yNKnsgLPBmHyE/fVLlH3V.K1F6fhXay08IuKb.RkE8XKXFgdsyuoq",
+    "role": "teacher",
+    "name": "Dương Quỳnh Anh"
+  },
+  {
+    "id": "0.5241778017252004",
+    "email": "linh@gmail.com",
+    "password": "$2b$12$yNKnsgLPBmHyE/fVLlH3V.K1F6fhXay08IuKb.RkE8XKXFgdsyuoq",
+    "role": "teacher",
+    "name": "Lê Thúy Linh"
+  },
+  {
+    "id": "0.32362370804931007",
+    "email": "vi@gmail.com",
+    "password": "$2b$12$yNKnsgLPBmHyE/fVLlH3V.K1F6fhXay08IuKb.RkE8XKXFgdsyuoq",
+    "role": "teacher",
+    "name": "Hoàng Văn Vĩ"
+  }
+]

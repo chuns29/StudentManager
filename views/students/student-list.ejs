@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/student.css">
+<link rel="stylesheet" href="/css/class.css">
+<link rel="stylesheet" href="/css/table.css">
+
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (students.length > 0) { %>
+            <h1>Danh sách Sinh viên</h1>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Tên Sinh viên</th>
+                        <th>Mã Sinh viên</th>
+                        <th>Ngày sinh</th>
+                        <th>Chuyên ngành</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.forEach(student => { %>
+                        <tr>
+                            <td><%= student.name %></td>
+                            <td><%= student.studentCode %></td>
+                            <td><%= student.dateOfBirth %></td>
+                            <td><%= student.major %></td>
+                            <td class="actions"> <a href="/admin/students/edit/<%= student.id %>" class="btn">Sửa</a>
+                                <form action="/admin/students/delete" method="POST">
+                                    <input type="hidden" name="studentId" value="<%= student.id %>">
+                                    <button type="submit" class="btn danger">Xóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+        <% } else { %>
+            <h1>Chưa có sinh viên nào được thêm!</h1>
+            <p><a href="/admin/add-student">Bắt đầu bằng cách thêm một sinh viên mới.</a></p>
+        <% } %>
+    </main>
+
+<%- include('../includes/end.ejs') %>

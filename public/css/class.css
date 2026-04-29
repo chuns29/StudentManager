@@ -1,0 +1,37 @@
+/* Dùng để định dạng form thêm/sửa lớp học */
+.class-form {
+    width: 25rem;
+    max-width: 90%;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Dùng để định dạng mỗi "thẻ" lớp học trong danh sách */
+.class-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+/* Định dạng cho tên lớp bên trong thẻ */
+.class__name {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Định dạng cho tên giáo viên */
+.class__teacher {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Định dạng cho thông tin sĩ số */
+.class__student-count {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+}

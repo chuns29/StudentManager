@@ -1,0 +1,40 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/class.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (classes.length > 0) { %>
+            <h1>Danh sách Lớp học</h1>
+            <div class="grid">
+                <% classes.forEach(cls => { %>
+                    <article class="card class-item">
+                        <header class="card__header">
+                            <h1 class="class__name"><%= cls.name %></h1>
+                        </header>
+                        <div class="card__content">
+                            <p class="class__teacher">GV: <%= cls.teacherName %></p>
+                            <p class="class__student-count">Sĩ số: <%= cls.studentCount ? cls.studentCount : 0 %> sinh viên</p>
+                        </div>
+                        <div class="card__actions">
+                            <a href="/admin/classes/<%= cls.id %>" class="btn">Xem Chi tiết</a>
+                            <% if (userRole === 'admin') { %>
+                                <a href="/admin/classes/edit/<%= cls.id %>" class="btn">Sửa Lớp</a>
+                                <form action="/admin/classes/delete" method="POST" style="display:inline;">
+                                    <input type="hidden" name="classId" value="<%= cls.id %>">
+                                    <button type="submit" class="btn danger">Xóa Lớp</button>
+                                </form> 
+                            <% } %>
+                        </div>
+                    </article>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <h1>Chưa có lớp học nào được tạo!</h1>
+            <p><a href="/admin/add-class">Bắt đầu bằng cách tạo một lớp học mới.</a></p>
+        <% } %>
+    </main>
+
+<%- include('../includes/end.ejs') %>
